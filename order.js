@@ -1,6 +1,11 @@
 class Order {
+  constructor() {
+    this.orderList = [];
+  }
+
   addItem(item) {
-    return [`${item}, 2.5`];
+    this.orderList.push([item, 2.5]);
+    return `Added: ${item}, $2.5`;
   }
 }
 
