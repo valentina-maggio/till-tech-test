@@ -6,4 +6,11 @@ describe('Order', () => {
 
     expect(order.addItem('coffee')).toEqual('Added: coffee, $2.5');
   });
+
+  it('retrieves the price for the item ordered', () => {
+    const order = new Order();
+    order.addItem('Tiramisu');
+
+    expect(order.getPrice('Tiramisu')).toBe(11.40);
+  });
 });
