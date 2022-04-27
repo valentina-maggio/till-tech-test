@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/valentina-maggio/till-tech-test#readme",
   "dependencies": {
-    "jest": "^28.0.2"
+    "jest": "^28.0.2",
+    "moment": "^2.29.3"
   },
   "jest": {
     "collectCoverage": true,

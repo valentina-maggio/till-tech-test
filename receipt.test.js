@@ -1,10 +1,19 @@
 const Receipt = require('./receipt');
 
+jest.mock('moment', () => () => jest.requireActual('moment')('2022-11-27T20:00:00.000Z'));
+
 describe('Receipt', () => {
   it('returns an instance of the Receipt class', () => {
     const receipt = new Receipt();
 
     expect(receipt).toBeInstanceOf(Receipt);
+  });
+
+  it('returns the date and time of the receipt', () => {
+    const receipt = new Receipt();
+
+    const date = receipt.getDate();
+    expect(date).toEqual('2022.11.27 20:00:00');
   });
 
   it('returns the coffee shop name', () => {

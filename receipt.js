@@ -1,3 +1,4 @@
+const moment = require('moment');
 const fs = require('fs');
 
 class Receipt {
@@ -5,6 +6,12 @@ class Receipt {
     this.shopDetails = '';
     this.table = '';
     this.staff = '';
+    this.date = moment();
+  }
+
+  getDate() {
+    const formattedDate = this.date.format('YYYY.MM.DD HH:mm:ss');
+    return formattedDate;
   }
 
   getShopDetails() {
