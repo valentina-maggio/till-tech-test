@@ -1,0 +1,27 @@
+{
+  "name": "till-tech-test",
+  "version": "1.0.0",
+  "description": "## Description",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valentina-maggio/till-tech-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valentina-maggio/till-tech-test/issues"
+  },
+  "homepage": "https://github.com/valentina-maggio/till-tech-test#readme",
+  "dependencies": {
+    "jest": "^28.0.2"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "verbose": true
+  }
+}
