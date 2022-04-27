@@ -51,7 +51,8 @@ describe('Receipt', () => {
 
   it('returns the items in the order with prices and quantities', () => {
     const receipt = new Receipt();
+    receipt.getShopDetails();
 
-    expect(receipt.getItems(['Americano', 3.75])).toBe('Americano    1 x 3.75');
+    expect(receipt.getItems([['Americano', 1]])).toBe('Americano     1 x 3.75');
   });
 });
