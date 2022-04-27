@@ -1,6 +1,6 @@
 class Order {
-  addItem() {
-    return 'coffee, 2.5';
+  addItem(item) {
+    return [`${item}, 2.5`];
   }
 }
 
