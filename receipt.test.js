@@ -12,4 +12,10 @@ describe('Receipt', () => {
 
     expect(receipt.getItems(['Americano', 3.75])).toBe('Americano    1 x 3.75');
   });
+
+  it('returns the coffee shop name', () => {
+    const receipt = new Receipt();
+
+    expect(receipt.getShopName('The Coffee Connection')).toBe('The Coffee Connection');
+  });
 });

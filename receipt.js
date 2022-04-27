@@ -1,6 +1,14 @@
+const fs = require('fs');
+
 class Receipt {
   getItems(orderList) {
     return 'Americano    1 x 3.75';
+  }
+
+  getShopName() {
+    const shopDetails = this.#getShopDetails();
+    const name = shopDetails[0].shopName;
+    return name;
   }
 
   #getShopDetails() {
