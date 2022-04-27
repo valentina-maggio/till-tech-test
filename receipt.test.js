@@ -24,4 +24,10 @@ describe('Receipt', () => {
 
     expect(receipt.getShopAddress('123 Lakeside Way')).toBe('123 Lakeside Way');
   });
+
+  it('returns the coffee shop phone number', () => {
+    const receipt = new Receipt();
+
+    expect(receipt.getPhone('16503600708')).toBe('16503600708');
+  });
 });

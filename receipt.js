@@ -17,6 +17,12 @@ class Receipt {
     return location;
   }
 
+  getPhone() {
+    const shopDetails = this.#getShopDetails();
+    const phoneNun = shopDetails[0].phone;
+    return phoneNun;
+  }
+
   #getShopDetails() {
     const jsonString = fs.readFileSync('./hipstercoffee.json');
     const info = JSON.parse(jsonString);
