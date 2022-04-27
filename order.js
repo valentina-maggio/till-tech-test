@@ -13,9 +13,7 @@ class Order {
   getPrice(item) {
     const shopDetails = this.#getShopDetails();
     const price = shopDetails[0].prices[0][`${item}`];
-    console.log(price);
-
-    return 11.40;
+    return price;
   }
 
   #getShopDetails() {

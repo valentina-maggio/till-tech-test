@@ -7,15 +7,16 @@ describe('Order', () => {
     expect(order.addItem('coffee')).toEqual('Added: coffee, $2.5');
   });
 
-  it('retrieves the price for the item ordered', () => {
+  it('retrieves the correct price for the item ordered', () => {
     const order = new Order();
     order.addItem('Tiramisu');
 
     expect(order.getPrice('Tiramisu')).toBe(11.40);
   });
 
-  it('returns the price for the item', () => {
+  it('retrieves correct the price for the item ordered', () => {
     const order = new Order();
-    expect(order.getPrice()).toBe(11.40);
+
+    expect(order.getPrice('Cafe Latte')).toBe(4.75);
   });
 });
