@@ -26,7 +26,10 @@ class Receipt {
 
   getPhone() {
     const phoneNun = this.shopDetails[0].phone;
-    return phoneNun;
+    return `+${phoneNun[0]} `
+    + `(${phoneNun.slice(1, 4)}) `
+    + `${phoneNun.slice(4, 7)}-`
+    + `${phoneNun.slice(7, 12)}`;
   }
 
   getTable(num = 1) {

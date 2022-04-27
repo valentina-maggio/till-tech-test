@@ -25,7 +25,7 @@ describe('Receipt', () => {
     const receipt = new Receipt();
     receipt.getShopDetails();
 
-    expect(receipt.getPhone()).toBe('16503600708');
+    expect(receipt.getPhone()).toBe('+1 (650) 360-0708');
   });
 
   it('returns the table number', () => {
