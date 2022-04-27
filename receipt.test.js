@@ -18,4 +18,10 @@ describe('Receipt', () => {
 
     expect(receipt.getShopName('The Coffee Connection')).toBe('The Coffee Connection');
   });
+
+  it('returns the coffee shop address', () => {
+    const receipt = new Receipt();
+
+    expect(receipt.getShopAddress('123 Lakeside Way')).toBe('123 Lakeside Way');
+  });
 });
