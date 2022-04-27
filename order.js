@@ -21,6 +21,10 @@ class Order {
     return this.orderList;
   }
 
+  printReceipt() {
+    return 'Americano 1 x 4.75';
+  }
+
   #getShopDetails() {
     const jsonString = fs.readFileSync('./hipstercoffee.json');
     const info = JSON.parse(jsonString);

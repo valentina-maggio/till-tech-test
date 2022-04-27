@@ -45,4 +45,11 @@ describe('Order', () => {
       ['Flat White', 4.75],
     ]);
   });
+
+  it('prints the receipt with the items ordered', () => {
+    const order = new Order();
+    order.addItem('Americano');
+
+    expect(order.printReceipt()).toBe('Americano 1 x 4.75');
+  });
 });
