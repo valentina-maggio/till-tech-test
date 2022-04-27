@@ -28,6 +28,18 @@ describe('Receipt', () => {
     expect(receipt.getPhone()).toBe('16503600708');
   });
 
+  it('returns the table number', () => {
+    const receipt = new Receipt();
+
+    expect(receipt.getTable()).toBe('Table: 1 / [4]');
+  });
+
+  it('returns the staff name', () => {
+    const receipt = new Receipt();
+
+    expect(receipt.getStaff('Jane')).toBe('Jane');
+  });
+
   it('returns the items in the order with prices and quantities', () => {
     const receipt = new Receipt();
 

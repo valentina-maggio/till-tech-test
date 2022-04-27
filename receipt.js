@@ -3,6 +3,8 @@ const fs = require('fs');
 class Receipt {
   constructor() {
     this.shopDetails = '';
+    this.table = '';
+    this.staff = '';
   }
 
   getShopDetails() {
@@ -25,6 +27,16 @@ class Receipt {
   getPhone() {
     const phoneNun = this.shopDetails[0].phone;
     return phoneNun;
+  }
+
+  getTable(num = 1) {
+    this.table = num;
+    return `Table: ${this.table} / [4]`;
+  }
+
+  getStaff(name) {
+    this.staff = name;
+    return `${this.staff}`;
   }
 
   getItems(orderList) {
