@@ -32,4 +32,17 @@ describe('Order', () => {
 
     expect(order.orderList[0]).toEqual(['Americano', 3.75]);
   });
+
+  it('returns the list of items added to the order', () => {
+    const order = new Order();
+    order.addItem('Americano');
+    order.addItem('Tiramisu');
+    order.addItem('Flat White');
+
+    expect(order.getOrder()).toEqual([
+      ['Americano', 3.75],
+      ['Tiramisu', 11.40],
+      ['Flat White', 4.75],
+    ]);
+  });
 });
