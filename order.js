@@ -6,8 +6,10 @@ class Order {
   }
 
   addItem(item) {
-    this.orderList.push([item, 2.5]);
-    return `Added: ${item}, $2.5`;
+    const price = this.getPrice(item);
+    this.orderList.push([item, price]);
+    console.log(this.orderList);
+    return `Added: ${item}, ${price}`;
   }
 
   getPrice(item) {

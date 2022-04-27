@@ -4,7 +4,7 @@ describe('Order', () => {
   it('adds an item to the order list', () => {
     const order = new Order();
 
-    expect(order.addItem('coffee')).toEqual('Added: coffee, $2.5');
+    expect(order.addItem('Single Espresso')).toEqual('Added: Single Espresso, 2.05');
   });
 
   it('retrieves the correct price for the item ordered', () => {
@@ -18,5 +18,18 @@ describe('Order', () => {
     const order = new Order();
 
     expect(order.getPrice('Cafe Latte')).toBe(4.75);
+  });
+
+  it('retrieves correct the price for the item ordered', () => {
+    const order = new Order();
+
+    expect(order.getPrice('Cafe Latte')).toBe(4.75);
+  });
+
+  it('adds the item and the price to the order list', () => {
+    const order = new Order();
+    order.addItem('Americano');
+
+    expect(order.orderList[0]).toEqual(['Americano', 3.75]);
   });
 });
