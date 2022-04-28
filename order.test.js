@@ -4,45 +4,45 @@ describe('Order', () => {
   it('adds an item to the order list', () => {
     const order = new Order();
 
-    expect(order.addItem('Single Espresso')).toEqual('Added: Single Espresso, 2.05');
+    expect(order.addItem('Single Espresso', 1)).toEqual('Added: 1 x Single Espresso');
   });
 
-  it('retrieves the correct price for the item ordered', () => {
+  // it('retrieves the correct price for the item ordered', () => {
+  //   const order = new Order();
+  //   order.addItem('Tiramisu');
+
+  //   expect(order.getPrice('Tiramisu')).toBe(11.40);
+  // });
+
+  // it('retrieves correct the price for the item ordered', () => {
+  //   const order = new Order();
+
+  //   expect(order.getPrice('Cafe Latte')).toBe(4.75);
+  // });
+
+  // it('retrieves correct the price for the item ordered', () => {
+  //   const order = new Order();
+
+  //   expect(order.getPrice('Cafe Latte')).toBe(4.75);
+  // });
+
+  it('adds the item and the quantity to the order list', () => {
     const order = new Order();
-    order.addItem('Tiramisu');
+    order.addItem('Americano', 1);
 
-    expect(order.getPrice('Tiramisu')).toBe(11.40);
-  });
-
-  it('retrieves correct the price for the item ordered', () => {
-    const order = new Order();
-
-    expect(order.getPrice('Cafe Latte')).toBe(4.75);
-  });
-
-  it('retrieves correct the price for the item ordered', () => {
-    const order = new Order();
-
-    expect(order.getPrice('Cafe Latte')).toBe(4.75);
-  });
-
-  it('adds the item and the price to the order list', () => {
-    const order = new Order();
-    order.addItem('Americano');
-
-    expect(order.orderList[0]).toEqual(['Americano', 3.75]);
+    expect(order.orderList[0]).toEqual(['Americano', 1]);
   });
 
   it('returns the list of items added to the order', () => {
     const order = new Order();
-    order.addItem('Americano');
-    order.addItem('Tiramisu');
-    order.addItem('Flat White');
+    order.addItem('Americano', 1);
+    order.addItem('Tiramisu', 1);
+    order.addItem('Flat White', 1);
 
     expect(order.getOrder()).toEqual([
-      ['Americano', 3.75],
-      ['Tiramisu', 11.40],
-      ['Flat White', 4.75],
+      ['Americano', 1],
+      ['Tiramisu', 1],
+      ['Flat White', 1],
     ]);
   });
 

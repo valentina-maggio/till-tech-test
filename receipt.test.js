@@ -70,7 +70,7 @@ describe('Receipt', () => {
     expect(receipt.getFooter()).toBe('Thank You!');
   });
 
-  it('returns the full receipt', () => {
+  it('returns the receipt with headers, food list and footer', () => {
     const receipt = new Receipt();
     receipt.getShopDetails();
 
