@@ -1,5 +1,7 @@
 const Order = require('./order');
 
+jest.mock('moment', () => () => jest.requireActual('moment')('2022-11-27T20:00:00.000Z'));
+
 describe('Order', () => {
   it('adds an item to the order list', () => {
     const order = new Order();
@@ -46,10 +48,23 @@ describe('Order', () => {
     ]);
   });
 
-  it('prints the receipt with the items ordered', () => {
+  it('prints the receipt with full order', () => {
     const order = new Order();
-    order.addItem('Americano');
+    order.addItem('Americano', 1);
+    order.addItem('Cappuccino', 2);
 
-    expect(order.printReceipt()).toBe('Americano 1 x 4.75');
+    expect(order.printReceipt([['Americano', 1], ['Cappuccino', 2]])).toBe('2022.11.27 20:00:00'
+      + '\n'
+      + 'The Coffee Connection\n'
+      + '\n'
+      + '123 Lakeside Way\n'
+      + '+1 (650) 360-0708\n'
+      + '\n'
+      + 'Table: 1 / [4]\n'
+      + 'Jane\n'
+      + 'Americano    1 x 3.75\n'
+      + 'Cappuccino    2 x 3.85\n'
+      + '\n'
+      + 'Thank You!');
   });
 });
