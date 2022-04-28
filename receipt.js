@@ -7,6 +7,7 @@ class Receipt {
     this.table = '';
     this.staff = '';
     this.date = moment();
+    this.total = 0;
     this.footer = 'Thank You!';
   }
 
@@ -53,6 +54,13 @@ class Receipt {
   getItems(orderList) {
     const list = orderList.map((item) => ` ${item[0]}    ${item[1]} x ${this.shopDetails[0].prices[0][item[0]]}`);
     return list.join('\n');
+  }
+
+  getTotal(orderList) {
+    orderList.forEach((item) => {
+      this.total += this.shopDetails[0].prices[0][item[0]] * item[1];
+    });
+    return Number(this.total.toFixed(2));
   }
 
   getFooter() {

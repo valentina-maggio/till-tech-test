@@ -64,6 +64,13 @@ describe('Receipt', () => {
     + '\n Cappuccino    2 x 3.85');
   });
 
+  it('returns the total to pay', () => {
+    const receipt = new Receipt();
+    receipt.getShopDetails();
+
+    expect(receipt.getTotal([['Choc Mousse', 1], ['Cappuccino', 2]])).toBe(15.90);
+  });
+
   it('returns Thank You! as a footer for the receipt', () => {
     const receipt = new Receipt();
 
