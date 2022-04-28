@@ -8,6 +8,7 @@ class Receipt {
     this.staff = '';
     this.date = moment();
     this.total = 0;
+    this.tax = 0.0864;
     this.footer = 'Thank You!';
   }
 
@@ -61,6 +62,12 @@ class Receipt {
       this.total += this.shopDetails[0].prices[0][item[0]] * item[1];
     });
     return Number(this.total.toFixed(2));
+  }
+
+  getTax(orderList) {
+    this.getTotal(orderList);
+    const tax = this.total * this.tax;
+    return Number(tax.toFixed(2));
   }
 
   getFooter() {

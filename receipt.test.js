@@ -71,6 +71,14 @@ describe('Receipt', () => {
     expect(receipt.getTotal([['Choc Mousse', 1], ['Cappuccino', 2]])).toBe(15.90);
   });
 
+  it('calculates the tax included in the total', () => {
+    const receipt = new Receipt();
+    receipt.getShopDetails();
+    receipt.getItems([['Choc Mousse', 1], ['Cappuccino', 2]]);
+
+    expect(receipt.getTax([['Choc Mousse', 1], ['Cappuccino', 2]])).toBe(1.37);
+  });
+
   it('returns Thank You! as a footer for the receipt', () => {
     const receipt = new Receipt();
 
