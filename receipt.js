@@ -45,7 +45,7 @@ class Receipt {
     return `Table: ${this.table} / [4]`;
   }
 
-  getStaff(name) {
+  getStaff(name = 'Jane') {
     this.staff = name;
     return `${this.staff}`;
   }
@@ -57,6 +57,27 @@ class Receipt {
 
   getFooter() {
     return this.footer;
+  }
+
+  getReceipt(orderList) {
+    this.getShopDetails();
+
+    const receipt = `${this.getDate()}\n`
+    + `${this.getShopName()}\n`
+    + ''
+    + '\n'
+    + `${this.getShopAddress()}\n`
+    + `${this.getPhone()}\n`
+    + ''
+    + '\n'
+    + `${this.getTable()}\n`
+    + `${this.getStaff()}\n`
+    + `${this.getItems(orderList)}\n`
+    + ''
+    + '\n'
+    + `${this.getFooter()}`;
+
+    return receipt;
   }
 }
 

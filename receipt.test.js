@@ -69,4 +69,23 @@ describe('Receipt', () => {
 
     expect(receipt.getFooter()).toBe('Thank You!');
   });
+
+  it('returns the full receipt', () => {
+    const receipt = new Receipt();
+    receipt.getShopDetails();
+
+    expect(receipt.getReceipt([['Americano', 1], ['Cappuccino', 2]])).toBe('2022.11.27 20:00:00'
+      + '\n'
+      + 'The Coffee Connection\n'
+      + '\n'
+      + '123 Lakeside Way\n'
+      + '+1 (650) 360-0708\n'
+      + '\n'
+      + 'Table: 1 / [4]\n'
+      + 'Jane\n'
+      + 'Americano    1 x 3.75\n'
+      + 'Cappuccino    2 x 3.85\n'
+      + '\n'
+      + 'Thank You!');
+  });
 });
