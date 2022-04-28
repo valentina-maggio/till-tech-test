@@ -1,4 +1,4 @@
-const Receipt = require("./receipt");
+const Receipt = require('./receipt');
 
 class Order {
   constructor() {
@@ -16,6 +16,7 @@ class Order {
   }
 
   printReceipt() {
+    console.log(this.receipt.getReceipt(this.orderList));
     return this.receipt.getReceipt(this.orderList);
   }
 }

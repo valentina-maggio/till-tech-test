@@ -51,7 +51,7 @@ class Receipt {
   }
 
   getItems(orderList) {
-    const list = orderList.map((item) => `${item[0]}    ${item[1]} x ${this.shopDetails[0].prices[0][item[0]]}`);
+    const list = orderList.map((item) => ` ${item[0]}    ${item[1]} x ${this.shopDetails[0].prices[0][item[0]]}`);
     return list.join('\n');
   }
 

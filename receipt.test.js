@@ -53,15 +53,15 @@ describe('Receipt', () => {
     const receipt = new Receipt();
     receipt.getShopDetails();
 
-    expect(receipt.getItems([['Americano', 1]])).toBe('Americano    1 x 3.75');
+    expect(receipt.getItems([['Americano', 1]])).toBe(' Americano    1 x 3.75');
   });
 
   it('returns a list of items in the order', () => {
     const receipt = new Receipt();
     receipt.getShopDetails();
 
-    expect(receipt.getItems([['Americano', 1], ['Cappuccino', 2]])).toBe('Americano    1 x 3.75'
-    + '\nCappuccino    2 x 3.85');
+    expect(receipt.getItems([['Americano', 1], ['Cappuccino', 2]])).toBe(' Americano    1 x 3.75'
+    + '\n Cappuccino    2 x 3.85');
   });
 
   it('returns Thank You! as a footer for the receipt', () => {
@@ -83,8 +83,8 @@ describe('Receipt', () => {
       + '\n'
       + 'Table: 1 / [4]\n'
       + 'Jane\n'
-      + 'Americano    1 x 3.75\n'
-      + 'Cappuccino    2 x 3.85\n'
+      + ' Americano    1 x 3.75\n'
+      + ' Cappuccino    2 x 3.85\n'
       + '\n'
       + 'Thank You!');
   });

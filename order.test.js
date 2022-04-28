@@ -9,25 +9,6 @@ describe('Order', () => {
     expect(order.addItem('Single Espresso', 1)).toEqual('Added: 1 x Single Espresso');
   });
 
-  // it('retrieves the correct price for the item ordered', () => {
-  //   const order = new Order();
-  //   order.addItem('Tiramisu');
-
-  //   expect(order.getPrice('Tiramisu')).toBe(11.40);
-  // });
-
-  // it('retrieves correct the price for the item ordered', () => {
-  //   const order = new Order();
-
-  //   expect(order.getPrice('Cafe Latte')).toBe(4.75);
-  // });
-
-  // it('retrieves correct the price for the item ordered', () => {
-  //   const order = new Order();
-
-  //   expect(order.getPrice('Cafe Latte')).toBe(4.75);
-  // });
-
   it('adds the item and the quantity to the order list', () => {
     const order = new Order();
     order.addItem('Americano', 1);
@@ -62,8 +43,8 @@ describe('Order', () => {
       + '\n'
       + 'Table: 1 / [4]\n'
       + 'Jane\n'
-      + 'Americano    1 x 3.75\n'
-      + 'Cappuccino    2 x 3.85\n'
+      + ' Americano    1 x 3.75\n'
+      + ' Cappuccino    2 x 3.85\n'
       + '\n'
       + 'Thank You!');
   });
