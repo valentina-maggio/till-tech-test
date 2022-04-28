@@ -49,10 +49,24 @@ describe('Receipt', () => {
     expect(receipt.getStaff('Jane')).toBe('Jane');
   });
 
-  it('returns the items in the order with prices and quantities', () => {
+  it('returns the item in the order with price and quantity', () => {
     const receipt = new Receipt();
     receipt.getShopDetails();
 
-    expect(receipt.getItems([['Americano', 1]])).toBe('Americano     1 x 3.75');
+    expect(receipt.getItems([['Americano', 1]])).toBe('Americano    1 x 3.75');
+  });
+
+  it('returns a list of items in the order', () => {
+    const receipt = new Receipt();
+    receipt.getShopDetails();
+
+    expect(receipt.getItems([['Americano', 1], ['Cappuccino', 2]])).toBe('Americano    1 x 3.75'
+    + '\nCappuccino    2 x 3.85');
+  });
+
+  it('returns Thank You! as a footer for the receipt', () => {
+    const receipt = new Receipt();
+
+    expect(receipt.getFooter()).toBe('Thank You!');
   });
 });

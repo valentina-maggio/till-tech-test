@@ -7,11 +7,7 @@ class Receipt {
     this.table = '';
     this.staff = '';
     this.date = moment();
-  }
-
-  getDate() {
-    const formattedDate = this.date.format('YYYY.MM.DD HH:mm:ss');
-    return formattedDate;
+    this.footer = 'Thank You!';
   }
 
   getShopDetails() {
@@ -19,6 +15,11 @@ class Receipt {
     const info = JSON.parse(jsonString);
     this.shopDetails = info;
     return this.shopDetails;
+  }
+
+  getDate() {
+    const formattedDate = this.date.format('YYYY.MM.DD HH:mm:ss');
+    return formattedDate;
   }
 
   getShopName() {
@@ -50,8 +51,12 @@ class Receipt {
   }
 
   getItems(orderList) {
-    const list = orderList.map((item) => `${item[0]}     ${item[1]} x ${this.shopDetails[0].prices[0][item[0]]}`);
+    const list = orderList.map((item) => `${item[0]}    ${item[1]} x ${this.shopDetails[0].prices[0][item[0]]}`);
     return list.join('\n');
+  }
+
+  getFooter() {
+    return this.footer;
   }
 }
 
